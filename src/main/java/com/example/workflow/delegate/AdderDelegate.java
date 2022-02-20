@@ -7,14 +7,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 
-public class HelloDelegate implements JavaDelegate{
+public class AdderDelegate implements JavaDelegate{
 	
-	private final Logger LOGGER = LoggerFactory.getLogger(HelloDelegate.class.getName());
+	private final Logger LOGGER = LoggerFactory.getLogger(AdderDelegate.class.getName());
 
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
-		LOGGER.debug("HELLO!!!!");
+		LOGGER.debug("Adding 2 + 5");
 		System.out.println("HELLO!!!");
-		
+		execution.setVariable("myResult", 7);
 	}
 }
+	
