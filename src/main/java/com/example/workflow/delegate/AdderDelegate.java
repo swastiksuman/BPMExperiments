@@ -13,6 +13,7 @@ public class AdderDelegate implements JavaDelegate{
 
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
+		System.out.println(execution.getVariable("number1"));
 		LOGGER.debug("Adding 2 + 5");
 		System.out.println("HELLO!!!");
 		execution.setVariable("myResult", 7);
